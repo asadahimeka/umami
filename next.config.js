@@ -46,7 +46,7 @@ const scriptName = process.env.TRACKER_SCRIPT_NAME;
 if (scriptName) {
   scriptNameRewrites = scriptName.split(',')
     .map(name => ({
-      source: name.trim() + '.js',
+      source: `/${name.trim()}.js`,
       destination: '/umami.js',
     }));
 }
