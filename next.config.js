@@ -32,6 +32,25 @@ if (process.env.FORCE_SSL) {
   });
 }
 
+let collectEndpointRewrites = [];
+const collectEndpoint = process.env.COLLECT_API_ENDPOINT;
+if (collectEndpoint) {
+  collectEndpointRewrites = [{
+    source: collectEndpoint,
+    destination: '/api/collect',
+  }];
+}
+
+let scriptNameRewrites = [];
+const scriptName = process.env.TRACKER_SCRIPT_NAME;
+if (scriptName) {
+  scriptNameRewrites = scriptName.split(',')
+    .map(name => ({
+      source: name.trim() + '.js',
+      destination: '/umami.js',
+    }));
+}
+
 module.exports = {
   env: {
     currentVersion: pkg.version,
@@ -66,6 +85,8 @@ module.exports = {
         source: '/telemetry.js',
         destination: '/api/scripts/telemetry',
       },
+      ...collectEndpointRewrites,
+      ...scriptNameRewrites
     ];
   },
 };
