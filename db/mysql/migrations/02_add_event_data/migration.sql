@@ -1,6 +1,6 @@
 -- DropForeignKey
-ALTER TABLE `event` DROP FOREIGN KEY `event_ibfk_1`;
-ALTER TABLE `event` DROP FOREIGN KEY `event_ibfk_2`;
+-- ALTER TABLE `event` DROP FOREIGN KEY `event_ibfk_1`;
+-- ALTER TABLE `event` DROP FOREIGN KEY `event_ibfk_2`;
 
 DROP INDEX `event_created_at_idx` ON `event`;
 DROP INDEX `event_session_id_idx` ON `event`;

@@ -1,20 +1,20 @@
 -- DropForeignKey
-ALTER TABLE `event` DROP FOREIGN KEY `event_ibfk_2`;
+-- ALTER TABLE `event` DROP FOREIGN KEY `event_ibfk_2`;
 
 -- DropForeignKey
-ALTER TABLE `event` DROP FOREIGN KEY `event_ibfk_1`;
+-- ALTER TABLE `event` DROP FOREIGN KEY `event_ibfk_1`;
 
 -- DropForeignKey
-ALTER TABLE `pageview` DROP FOREIGN KEY `pageview_ibfk_2`;
+-- ALTER TABLE `pageview` DROP FOREIGN KEY `pageview_ibfk_2`;
 
 -- DropForeignKey
-ALTER TABLE `pageview` DROP FOREIGN KEY `pageview_ibfk_1`;
+-- ALTER TABLE `pageview` DROP FOREIGN KEY `pageview_ibfk_1`;
 
 -- DropForeignKey
-ALTER TABLE `session` DROP FOREIGN KEY `session_ibfk_1`;
+-- ALTER TABLE `session` DROP FOREIGN KEY `session_ibfk_1`;
 
 -- DropForeignKey
-ALTER TABLE `website` DROP FOREIGN KEY `website_ibfk_1`;
+-- ALTER TABLE `website` DROP FOREIGN KEY `website_ibfk_1`;
 
 -- AddForeignKey
 ALTER TABLE `event` ADD CONSTRAINT `event_session_id_fkey` FOREIGN KEY (`session_id`) REFERENCES `session`(`session_id`) ON DELETE RESTRICT ON UPDATE CASCADE;
